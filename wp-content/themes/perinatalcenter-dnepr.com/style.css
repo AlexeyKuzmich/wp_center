@@ -333,7 +333,7 @@ nav {
 .nav > li > a.parent,
 .nav > li > a.parent:hover,
 .nav > li > a.parent:focus {
-  background-image: url("../images/downArrow.png");
+  background-image: url('images/downArrow.png');
   background-repeat: no-repeat;
   background-position: right;
 }
@@ -434,15 +434,16 @@ nav .nav a:focus {
 }
 
 .owl-mainSlider .slide1 {
-  background-image: url(../images/mainSlider/1-lg.jpg);
+  background-image: url('images/mainSlider/1-lg.jpg');
 }
 
+
 .owl-mainSlider .slide2 {
-  background-image: url(../images/mainSlider/2-lg.jpg);
+  background-image: url('images/mainSlider/2-lg.jpg');
 }
 
 .owl-mainSlider .slide3 {
-  background-image: url(../images/mainSlider/3-lg.jpg);
+  background-image: url('images/mainSlider/3-lg.jpg');
 }
 
 .owl-mainSlider .owl-prev,
@@ -458,12 +459,12 @@ nav .nav a:focus {
 }
 
 .owl-mainSlider .owl-prev {
-  background: url(../images/prev.png) no-repeat center;
+  background: url(images/prev.png) no-repeat center;
   left: 0;
 }
 
 .owl-mainSlider .owl-next {
-  background: url(../images/next.png) no-repeat center;
+  background: url(images/next.png) no-repeat center;
   right: 0;
 }
 /*************** / MAINSLIDER ***************/
@@ -570,12 +571,12 @@ nav .nav a:focus {
 }
 
 .owl-doctors .owl-prev {
-  background: url(../images/prev.png) no-repeat center;
+  background: url(images/prev.png) no-repeat center;
   left: 0;
 }
 
 .owl-doctors .owl-next {
-  background: url(../images/next.png) no-repeat center;
+  background: url(images/next.png) no-repeat center;
   right: 0;
 }
 
@@ -1231,13 +1232,13 @@ footer canvas {
 @media (max-width: 767px) {
 
   .owl-mainSlider .slide1 {
-    background-image: url(../images/mainSlider/1-md.jpg);
+    background-image: url('images/mainSlider/1-md.jpg');
   }
   .owl-mainSlider .slide2 {
-    background-image: url(../images/mainSlider/2-md.jpg);
+    background-image: url('images/mainSlider/2-md.jpg');
   }
   .owl-mainSlider .slide3 {
-    background-image: url(../images/mainSlider/3-md.jpg);
+    background-image: url('images/mainSlider/3-md.jpg');
   }
 
   /* COMMON STYLES */
@@ -1359,12 +1360,12 @@ footer canvas {
 /* IMAGE LOADING DEPENDING ON SCREEN SIZE */
 @media (max-width: 360px) {
   .owl-mainSlider .slide1 {
-    background-image: url(../images/mainSlider/1-sm.jpg);
+    background-image: url('images/mainSlider/1-sm.jpg');
   }
   .owl-mainSlider .slide2 {
-    background-image: url(../images/mainSlider/2-sm.jpg);
+    background-image: url('images/mainSlider/2-sm.jpg');
   }
   .owl-mainSlider .slide3 {
-    background-image: url(../images/mainSlider/3-sm.jpg);
+    background-image: url('images/mainSlider/3-sm.jpg');
   }
 }

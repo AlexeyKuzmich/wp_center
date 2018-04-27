@@ -1,16 +1,19 @@
-function sliderHeightDetect() {
-  var sliderHeight = $(window).height() - $("header").height() - $("nav").height();
-  $(".owl-mainSlider .item").css("height", sliderHeight);
-};
+
+jQuery(document).ready(function($) {
+
+     function sliderHeightDetect() {
+      var sliderHeight = $(window).height() - $("header").height() - $("nav").height();
+      $(".owl-mainSlider .item").css("height", sliderHeight);
+    };
 
 
 // adaptive menu
 function adjustMenu() {
   var ww = $(window).width(),
-      $directionItem = $(".direction .item"),
-      $scheduleInner = $(".schedule .inner"),
-      $scrollBlock = $(".scrollBlock"),
-      $counter = 0;
+  $directionItem = $(".direction .item"),
+  $scheduleInner = $(".schedule .inner"),
+  $scrollBlock = $(".scrollBlock"),
+  $counter = 0;
 
   if (ww < 751) { // = 768 - 17 (verticasl scroll width)
     $(".toggleMenu").css("display", "block");
@@ -30,26 +33,26 @@ function adjustMenu() {
 
     $(".nav li").off('mouseenter mouseleave');
     $(".nav li a.parent")
-      .off('click')
-        .on('click', function(e) {
+    .off('click')
+    .on('click', function(e) {
       // Необходимоо привязать к элементу ссылки для предотвращения "всплывания"
       e.preventDefault();
 
       $(this)
-        .parent("li")
-          .toggleClass("hover");
+      .parent("li")
+      .toggleClass("hover");
     });
 
     $directionItem.each(function() { // equal height of .direction
       $(this)
-        .removeClass("largeScreen")
-          .removeAttr("style");
+      .removeClass("largeScreen")
+      .removeAttr("style");
     });
 
     $scheduleInner.each(function() { // equal height of .schedule
       $(this)
-        .removeClass("largeScreen")
-          .removeAttr("style");
+      .removeClass("largeScreen")
+      .removeAttr("style");
     });
 
   } else if ( ww >= 751 ) { // = 768 - 17 (verticasl scroll width)
@@ -68,14 +71,14 @@ function adjustMenu() {
     
     $(".toggleMenu").css("display", "none");
     $(".nav")
-      .show()
-        .css("display", "block");
+    .show()
+    .css("display", "block");
 
     $(".nav li a").off('click');
     $(".nav li")
-      .removeClass("hover")
-        .off('mouseenter mouseleave')
-          .on('mouseenter mouseleave', function() {
+    .removeClass("hover")
+    .off('mouseenter mouseleave')
+    .on('mouseenter mouseleave', function() {
       // Необходимо привязать к элементу li для предотвращения запуска события mouseleave при перемещении курсора мыши над подменю
       $(this).toggleClass('hover');
     });
@@ -110,7 +113,7 @@ function setEqualHeight(columns) {
 // parallaxImage loading depending on screen size
 function imageSizeDetect() {
   var ww = $(window).width(),
-      imageSize = "";
+  imageSize = "";
   if (ww <= 599) {
     imageSize = "sm";
   } else if (ww > 600 && ww <= 992) {
@@ -126,30 +129,21 @@ function imageSizeDetect() {
 
 
 
+var preload = 15;
 
-
-
-
-//***********************************************************************
-//****************************** DOM READY ******************************
-//***********************************************************************
-$(document).ready(function() {
-
-  var preload = 15;
-
-  (function () {      
-      $(".greeting").css("opacity", 1);
-      $("#preload")
-        .delay(preload)
-          .fadeOut(preload);
-  })();
+(function () {      
+  $(".greeting").css("opacity", 1);
+  $("#preload")
+  .delay(preload)
+  .fadeOut(preload);
+})();
 
 
 
 
 
 
-  /*var ww = document.body.clientWidth;*/
+/*var ww = document.body.clientWidth;*/
   // navigation
   (function () {
     var $navRef = $(".nav li a");
@@ -168,23 +162,23 @@ $(document).ready(function() {
   // tab lighting
   (function() {
     var location = window.location.href,
-        $navRef = $(".nav li li a"),
-        $navMainRef = $(".nav > li > a");
+    $navRef = $(".nav li li a"),
+    $navMainRef = $(".nav > li > a");
 
-      $navRef.each(function() {
-        if (location.search($(this).attr("href")) > -1) {
-          $navRef.removeClass("activeMenuItem");
-          $(this).addClass("activeMenuItem");
-          $(this).parent().parent().parent().find(".parent").addClass("activeMenuItem");
-        }
-      });
+    $navRef.each(function() {
+      if (location.search($(this).attr("href")) > -1) {
+        $navRef.removeClass("activeMenuItem");
+        $(this).addClass("activeMenuItem");
+        $(this).parent().parent().parent().find(".parent").addClass("activeMenuItem");
+      }
+    });
 
-      $navMainRef.each(function() {
-        if (location.search($(this).attr("href")) > -1) {
-          $navMainRef.removeClass("activeMenuItem");
-          $(this).addClass("activeMenuItem");
-        }
-      });
+    $navMainRef.each(function() {
+      if (location.search($(this).attr("href")) > -1) {
+        $navMainRef.removeClass("activeMenuItem");
+        $(this).addClass("activeMenuItem");
+      }
+    });
   })();
 
 
@@ -220,10 +214,10 @@ $(document).ready(function() {
   var $owl = $(".owl-doctors");
   $(".owl-doctors").owlCarousel({
     onRefresh: function () { // установка одинаковой высоты owl-item
-        $owl.find(".owl-item").height("");
+      $owl.find(".owl-item").height("");
     },
     onRefreshed: function () {
-        $owl.find(".owl-item").height($owl.height() + 45);
+      $owl.find(".owl-item").height($owl.height() + 45);
     },
     loop: true,
     margin: 10,
@@ -265,7 +259,7 @@ $(document).ready(function() {
 
 
   // parallax
-  $(".parallax-window").parallax({ imageSrc: "images/parallax/" + imageSizeDetect() + ".jpg"}); // в parallaxImageDetect() определяестся загружаемое изображение в зависимости от ширины экрана
+  $(".parallax-window").parallax({ imageSrc: "wp-content/themes/perinatalcenter-dnepr.com/images/parallax/" + imageSizeDetect() + ".jpg"}); // в parallaxImageDetect() определяестся загружаемое изображение в зависимости от ширины экрана
 
 
 
@@ -278,7 +272,7 @@ $(document).ready(function() {
     }
 
     var $button = $(".descriptionText button"),
-        $text = $button.siblings().not(".textShow");
+    $text = $button.siblings().not(".textShow");
     $text.hide();
     $button.click(function() {
       if ( $text.is(":hidden") ) {
@@ -293,65 +287,20 @@ $(document).ready(function() {
 
 
 
-
-
-
-/*  function storePagePosition() {
-    var page_y = window.pageYOffset;
-    localStorage.setItem("page_y", page_y);
-    console.log("page_y = " + page_y);
-  }
-
-
-  window.addEventListener("scroll", storePagePosition);
-
-
-  var currentPageY;
-
-  try {
-    currentPageY = localStorage.getItem("page_y");
-
-    if (currentPageY === undefined) {
-      localStorage.setItem("page_y") = 0;
-    }
-
-    window.scrollTo( 0, currentPageY );
-  } catch (e) {
-      // no localStorage available
-    }*/
-
-
-
-
-
-
-
-/*    var url = window.location.href;
-    console.log("url = " + url);
-    console.log( "url.indexOf('#') = " + url.indexOf("#") );
-    if ( url.indexOf('#') < 0 ) {
-      window.location.replace(url + "#");
-    } else {
-      window.location.replace(url);
-    }*/
-
-
-
-
   // mixitup
   (function() {
     var checkMixElem = document.querySelector("#specialistsMix"),
-        mixer = "",
-        li = $(".specialists li"),
-        mix = $(".mix"),
-        mixConfig = {
-          animation: {
-            enable: true,
-            duration: 300,
-            effects: "rotateZ fade",
-            easing: "cubic-bezier(0.645, 0.045, 0.355, 1)"
-          }
-        }
+    mixer = "",
+    li = $(".specialists li"),
+    mix = $(".mix"),
+    mixConfig = {
+      animation: {
+        enable: true,
+        duration: 300,
+        effects: "rotateZ fade",
+        easing: "cubic-bezier(0.645, 0.045, 0.355, 1)"
+      }
+    }
 
     if ( checkMixElem ) {
       mixer = mixitup(checkMixElem, mixConfig);
@@ -417,11 +366,12 @@ $(document).ready(function() {
   //*************** PAGES **************************************
   (function() {
     var $main = $("main"),
-        pageMark = "";
+    pageMark = "";
     if ( $main.attr("class") ) { 
       pageMark = $main.attr("class");
       console.log( "pageMark = " + pageMark );
-      $("." + pageMark + " .departmentImg img").attr("src", "images/" + pageMark + "/" + imageSizeDetect() + ".jpg");
+      /*$("." + pageMark + " .departmentImg img").attr("src", "images/" + pageMark + "/" + imageSizeDetect() + ".jpg");*/
+      $("." + pageMark + " .departmentImg img").attr("src", "wp-content/themes/perinatalcenter-dnepr.com/images/" + pageMark + "/" + imageSizeDetect() + ".jpg");
     }
   })();
   //*************** / PAGES ************************************
@@ -454,10 +404,11 @@ $(document).ready(function() {
                //код в этом блоке выполняется при успешной отправке сообщения
                alert("Ваше сообщение отпрвлено!");
              }
-        });
-  });
+           });
+      });
 
 
 
+});
 
-}); //$(document).ready(function()
+
