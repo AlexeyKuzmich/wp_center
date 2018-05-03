@@ -515,6 +515,8 @@ nav .nav a:focus {
 
 /*************** headPhysician ***************/
 .headPhysician img {
+	width: 100%;
+	height: auto;
   margin-bottom: 30px;
   box-shadow: 1px 1px 12px 0px #4A9FFF;
 }

@@ -12,11 +12,11 @@
   <div class="container">
     <div class="row direction">
       <!-- <hr class="hrStyle hidden-xs"> -->
-      <h1><?php echo get_cat_name(2);?></h1>
+      <h1><?php echo get_cat_name(2); ?></h1>
       <div class="col-sm-4">
         <a href="http://www.cps.org.ua" target="_blank">
           <div class="item">
-            <img class="img-responsive center-block" src="<?php bloginfo('template_url') ?>/images/treat.png" alt="img" />
+            <img class="img-responsive center-block" src="<?php bloginfo('template_url'); ?>/images/treat.png" alt="img" />
             <h3><strong><em>Лікувально-діагностична робота</em></strong></h3>
           </div>
         </a>
@@ -24,7 +24,7 @@
       <div class="col-sm-4">
         <a href="https://www.facebook.com/diagnostic.otdelenie" target="_blank">
           <div class="item">
-            <img class="img-responsive center-block" src="<?php bloginfo('template_url') ?>/images/consult.png" alt="img" />
+            <img class="img-responsive center-block" src="<?php bloginfo('template_url'); ?>/images/consult.png" alt="img" />
             <h3><strong><em>Консультативна та організаційно-методична робота</em></strong></h3>
           </div>
         </a>
@@ -32,7 +32,7 @@
       <div class="col-sm-4">
         <a href="http://605.dsma.dp.ua" target="_blank">
           <div class="item">
-            <img class="img-responsive center-block" src="<?php bloginfo('template_url') ?>/images/research.png" alt="img" />
+            <img class="img-responsive center-block" src="<?php bloginfo('template_url'); ?>/images/research.png" alt="img" />
             <h3><strong><em>Наукова робота</em></strong></h3>
           </div>
         </a>
@@ -46,15 +46,19 @@
 <section class="headPhysician coloredSection">
   <div class="container">
     <div class="row">
-      <!-- <hr class="hrStyle hidden-xs"> -->
-      <h1><?php echo get_cat_name(3);?></h1>
+      <h1><?php echo get_cat_name(3); ?></h1>
+
+      <?php if ( have_posts() ) : query_posts('p=7');
+      while (have_posts()) : the_post(); ?>
       <div class="col-sm-5">
-        <img src="<?php bloginfo('template_url') ?>/images/doctors/padalko.jpg" alt="headPhysician" class="img-responsive" />
+        <?php the_post_thumbnail('large', array('class' => 'img-responsive')); ?>
       </div>
       <div class="col-sm-7">
-        <?php echo category_description(3);?>
-        <h3 class="text-right">Головний лiкар<br />Заслужений лiкар України<br />кандидат медичних наук<br />Л.I. Падалко</h3>
+        <?php the_content(); ?>
+        <h3 class="text-right"><?php echo get_post_meta( 7, 'signature', true ); ?></h3>
       </div>
+      <?php endwhile; endif; wp_reset_query(); ?>
+
     </div>
   </div>
 </section>
@@ -64,95 +68,95 @@
 <section>
   <div class="container">
     <!-- <hr class="hrStyle hidden-xs"> -->
-    <h1>завідувачi відділеннями</h1>
+    <h1><?php echo get_cat_name(4); ?></h1>
     <div class="owl-carousel owl-doctors grabbable">
 
       <div class="item">
-        <img src="<?php bloginfo('template_url') ?>/images/doctors/1.jpg" alt="owl" />
+        <img src="<?php bloginfo('template_url'); ?>/images/doctors/1.jpg" alt="owl" />
         <h3>Савельєва Олена Альбертівна</h3>
         <p>Перше акушерське відділення</p>
         <a href="#">Докладнiше</a>
       </div>
 
       <div class="item">
-        <img src="<?php bloginfo('template_url') ?>/images/doctors/2.jpg" alt="owl" />
+        <img src="<?php bloginfo('template_url'); ?>/images/doctors/2.jpg" alt="owl" />
         <h3>Самарець Світлана Анатоліївна</h3>
         <p>Друге акушерське відділення</p>
         <a href="#">Докладнiше</a>
       </div>
 
       <div class="item">
-        <img src="<?php bloginfo('template_url') ?>/images/doctors/3.jpg" alt="owl" />
+        <img src="<?php bloginfo('template_url'); ?>/images/doctors/3.jpg" alt="owl" />
         <h3>Боровкова  Л.Г.</h3>
         <p>Відділення патології вагітних</p>
         <a href="#">Докладнiше</a>
       </div>
 
       <div class="item">
-        <img src="<?php bloginfo('template_url') ?>/images/doctors/4.jpg" alt="owl" />
+        <img src="<?php bloginfo('template_url'); ?>/images/doctors/4.jpg" alt="owl" />
         <h3>Філімонова Л.Р.</h3>
         <p>Відділення інтенсивної терапії</p>
         <a href="#">Докладнiше</a>
       </div>
 
       <div class="item">
-        <img src="<?php bloginfo('template_url') ?>/images/doctors/1.jpg" alt="owl" />
+        <img src="<?php bloginfo('template_url'); ?>/images/doctors/1.jpg" alt="owl" />
         <h3>doctor's name and surname</h3>
         <p>Відділення гіпербаричної оксігенації</p>
         <a href="#">Докладнiше</a>
       </div>
 
       <div class="item">
-        <img src="<?php bloginfo('template_url') ?>/images/doctors/2.jpg" alt="owl" />
+        <img src="<?php bloginfo('template_url'); ?>/images/doctors/2.jpg" alt="owl" />
         <h3>doctor's name and surname</h3>
         <p>Відділення новонароджених</p>
         <a href="#">Докладнiше</a>
       </div>
 
       <div class="item">
-        <img src="<?php bloginfo('template_url') ?>/images/doctors/3.jpg" alt="owl" />
+        <img src="<?php bloginfo('template_url'); ?>/images/doctors/3.jpg" alt="owl" />
         <h3>ЗАЯЦЬ ОЛЕНА В'ЯЧЕСЛАВІВНА</h3>
         <p>Консультативно-діагностичне відділення</p>
         <a href="#">Докладнiше</a>
       </div>
 
       <div class="item">
-        <img src="<?php bloginfo('template_url') ?>/images/doctors/4.jpg" alt="owl" />
+        <img src="<?php bloginfo('template_url'); ?>/images/doctors/4.jpg" alt="owl" />
         <h3>Мальцева Ольга Ігорівна</h3>
         <p>Центр Планування сім’ї та репродукції людини</p>
         <a href="maltseva.html">Докладнiше</a>
       </div>
 
       <div class="item">
-        <img src="<?php bloginfo('template_url') ?>/images/doctors/1.jpg" alt="owl" />
+        <img src="<?php bloginfo('template_url'); ?>/images/doctors/1.jpg" alt="owl" />
         <h3>АКАШЕВА НАЗІГУЛЬ ЖАМІЇВНА</h3>
         <p>Відділення оперативної ургентної гінекології з малоінвазівними технологiями</p>
         <a href="#">Докладнiше</a>
       </div>
 
       <div class="item">
-        <img src="<?php bloginfo('template_url') ?>/images/doctors/5.jpg" alt="owl" />
+        <img src="<?php bloginfo('template_url'); ?>/images/doctors/5.jpg" alt="owl" />
         <h3>ПУЗІЙ ОЛЕКСАНДР МИКОЛАЙОВИЧ</h3>
         <p>Відділення оперативної гінекології з малоінвазівними технологiями</p>
         <a href="#">Докладнiше</a>
       </div>
 
       <div class="item">
-        <img src="<?php bloginfo('template_url') ?>/images/doctors/3.jpg" alt="owl" />
+        <img src="<?php bloginfo('template_url'); ?>/images/doctors/3.jpg" alt="owl" />
         <h3>Ширінкіна Наталія Костянтинівна</h3>
         <p>Відділення медиціни плода та патології ранніх термінів вагітності</p>
         <a href="#">Докладнiше</a>
       </div>
 
       <div class="item">
-        <img src="<?php bloginfo('template_url') ?>/images/doctors/4.jpg" alt="owl" />
+        <img src="<?php bloginfo('template_url'); ?>/images/doctors/4.jpg" alt="owl" />
         <h3>Самохіна І.І.</h3>
         <p>Відділення постінтенсивного догляду та виходжування новонароджених</p>
         <a href="#">Докладнiше</a>
       </div>
 
       <div class="item">
-        <img src="<?php bloginfo('template_url') ?>/images/doctors/1.jpg" alt="owl" />
+        <img src="<?php bloginfo('template_url'); ?>/images/doctors/1.jpg" alt="owl" />
         <h3>Ю.О. Дубоссарська</h3>
         <p>Кафедра акушерства, гінекології та перінатології ФПО ДМА</p>
         <a href="#">Докладнiше</a>
