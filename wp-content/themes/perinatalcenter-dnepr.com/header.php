@@ -114,7 +114,7 @@
           <li><a href="addServices_1.html">Фотогалерея</a></li>
           <li><a href="addServices_2.html">Новини центру</a></li>
           <li><a href="addServices_3.html">Статтi</a></li>
-        </ul>                  
+        </ul>
       </li>
       <li><a href="contacts.html">Контакти</a></li>
     </ul>
