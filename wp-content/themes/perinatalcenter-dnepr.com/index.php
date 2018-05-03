@@ -12,7 +12,7 @@
   <div class="container">
     <div class="row direction">
       <!-- <hr class="hrStyle hidden-xs"> -->
-      <h1>Напрямки діяльності</h1>
+      <h1><?php echo get_cat_name(2);?></h1>
       <div class="col-sm-4">
         <a href="http://www.cps.org.ua" target="_blank">
           <div class="item">
@@ -47,12 +47,12 @@
   <div class="container">
     <div class="row">
       <!-- <hr class="hrStyle hidden-xs"> -->
-      <h1>звернення головного лікаря</h1>
+      <h1><?php echo get_cat_name(3);?></h1>
       <div class="col-sm-5">
         <img src="<?php bloginfo('template_url') ?>/images/doctors/padalko.jpg" alt="headPhysician" class="img-responsive" />
       </div>
       <div class="col-sm-7">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo accusantium ipsam assumenda neque illo eum dolorem soluta sunt similique non reprehenderit quam asperiores, suscipit dolores. Consequatur enim aliquam, suscipit, odit nemo illum ratione itaque porro repudiandae vel voluptatibus perspiciatis dolorem accusantium tempora reiciendis nulla voluptates perferendis sapiente culpa! Veniam placeat a dolorum eligendi laudantium ea eaque dicta ut quod laborum sequi deleniti iusto dolor, est quis quos aut totam ducimus nihil vitae repellendus. Excepturi aliquid animi similique omnis sint nulla consectetur a praesentium ex assumenda in, dicta recusandae quidem necessitatibus qui ea odit, officia ad blanditiis? Voluptates eligendi quibusdam, quae!</p>
+        <?php echo category_description(3);?>
         <h3 class="text-right">Головний лiкар<br />Заслужений лiкар України<br />кандидат медичних наук<br />Л.I. Падалко</h3>
       </div>
     </div>

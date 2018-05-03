@@ -1,6 +1,6 @@
 <?php
 
-//scrips and styles loading
+//подключение скриптов и стилей
 function style_script_load() {
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'bootstrap.min', get_template_directory_uri() . '/libs/bootstrap-3.3.7-dist/js/bootstrap.min.js' );
@@ -17,3 +17,6 @@ add_action( 'wp_enqueue_scripts', 'style_script_load' );
 
 //adminpanel
 show_admin_bar(false);
+
+// регистрация миниатюр для всех типов постов
+add_theme_support( 'post-thumbnails' );
