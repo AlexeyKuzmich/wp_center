@@ -20,3 +20,6 @@ show_admin_bar(false);
 
 // регистрация миниатюр для всех типов постов
 add_theme_support( 'post-thumbnails' );
+
+// регистрация меню
+add_theme_support( 'menus' );

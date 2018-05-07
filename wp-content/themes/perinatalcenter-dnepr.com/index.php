@@ -71,96 +71,15 @@
     <h1><?php echo get_cat_name(4); ?></h1>
     <div class="owl-carousel owl-doctors grabbable">
 
+      <?php if ( have_posts() ) : query_posts('cat=4');
+      while (have_posts()) : the_post(); ?>      
       <div class="item">
-        <img src="<?php bloginfo('template_url'); ?>/images/doctors/1.jpg" alt="owl" />
-        <h3>Савельєва Олена Альбертівна</h3>
-        <p>Перше акушерське відділення</p>
-        <a href="#">Докладнiше</a>
+        <?php the_post_thumbnail('large', array('class' => 'img-responsive')); ?>
+        <h3><?php the_title(); ?></h3>
+        <p><?php echo get_post_meta( 14, 'position', true ); ?></p>
+        <a href="<?php bloginfo('template_url'); ?>/maltseva.html">Докладнiше</a>
       </div>
-
-      <div class="item">
-        <img src="<?php bloginfo('template_url'); ?>/images/doctors/2.jpg" alt="owl" />
-        <h3>Самарець Світлана Анатоліївна</h3>
-        <p>Друге акушерське відділення</p>
-        <a href="#">Докладнiше</a>
-      </div>
-
-      <div class="item">
-        <img src="<?php bloginfo('template_url'); ?>/images/doctors/3.jpg" alt="owl" />
-        <h3>Боровкова  Л.Г.</h3>
-        <p>Відділення патології вагітних</p>
-        <a href="#">Докладнiше</a>
-      </div>
-
-      <div class="item">
-        <img src="<?php bloginfo('template_url'); ?>/images/doctors/4.jpg" alt="owl" />
-        <h3>Філімонова Л.Р.</h3>
-        <p>Відділення інтенсивної терапії</p>
-        <a href="#">Докладнiше</a>
-      </div>
-
-      <div class="item">
-        <img src="<?php bloginfo('template_url'); ?>/images/doctors/1.jpg" alt="owl" />
-        <h3>doctor's name and surname</h3>
-        <p>Відділення гіпербаричної оксігенації</p>
-        <a href="#">Докладнiше</a>
-      </div>
-
-      <div class="item">
-        <img src="<?php bloginfo('template_url'); ?>/images/doctors/2.jpg" alt="owl" />
-        <h3>doctor's name and surname</h3>
-        <p>Відділення новонароджених</p>
-        <a href="#">Докладнiше</a>
-      </div>
-
-      <div class="item">
-        <img src="<?php bloginfo('template_url'); ?>/images/doctors/3.jpg" alt="owl" />
-        <h3>ЗАЯЦЬ ОЛЕНА В'ЯЧЕСЛАВІВНА</h3>
-        <p>Консультативно-діагностичне відділення</p>
-        <a href="#">Докладнiше</a>
-      </div>
-
-      <div class="item">
-        <img src="<?php bloginfo('template_url'); ?>/images/doctors/4.jpg" alt="owl" />
-        <h3>Мальцева Ольга Ігорівна</h3>
-        <p>Центр Планування сім’ї та репродукції людини</p>
-        <a href="maltseva.html">Докладнiше</a>
-      </div>
-
-      <div class="item">
-        <img src="<?php bloginfo('template_url'); ?>/images/doctors/1.jpg" alt="owl" />
-        <h3>АКАШЕВА НАЗІГУЛЬ ЖАМІЇВНА</h3>
-        <p>Відділення оперативної ургентної гінекології з малоінвазівними технологiями</p>
-        <a href="#">Докладнiше</a>
-      </div>
-
-      <div class="item">
-        <img src="<?php bloginfo('template_url'); ?>/images/doctors/5.jpg" alt="owl" />
-        <h3>ПУЗІЙ ОЛЕКСАНДР МИКОЛАЙОВИЧ</h3>
-        <p>Відділення оперативної гінекології з малоінвазівними технологiями</p>
-        <a href="#">Докладнiше</a>
-      </div>
-
-      <div class="item">
-        <img src="<?php bloginfo('template_url'); ?>/images/doctors/3.jpg" alt="owl" />
-        <h3>Ширінкіна Наталія Костянтинівна</h3>
-        <p>Відділення медиціни плода та патології ранніх термінів вагітності</p>
-        <a href="#">Докладнiше</a>
-      </div>
-
-      <div class="item">
-        <img src="<?php bloginfo('template_url'); ?>/images/doctors/4.jpg" alt="owl" />
-        <h3>Самохіна І.І.</h3>
-        <p>Відділення постінтенсивного догляду та виходжування новонароджених</p>
-        <a href="#">Докладнiше</a>
-      </div>
-
-      <div class="item">
-        <img src="<?php bloginfo('template_url'); ?>/images/doctors/1.jpg" alt="owl" />
-        <h3>Ю.О. Дубоссарська</h3>
-        <p>Кафедра акушерства, гінекології та перінатології ФПО ДМА</p>
-        <a href="#">Докладнiше</a>
-      </div>
+      <?php endwhile; endif; wp_reset_query(); ?>
 
     </div>
   </div>
@@ -226,4 +145,5 @@
     </form>
   </div>
 </section>
+
 <?php get_footer(); ?>
